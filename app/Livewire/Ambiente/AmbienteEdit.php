@@ -7,30 +7,32 @@ use Livewire\Component;
 
 class AmbienteEdit extends Component
 {
-     public $nome;
+    public $nome;
     public $descricao;
     public $status;
-  
+    public $ambiente_id;
 
-    public function mount($id){
+
+    public function mount($id)
+    {
         $ambiente = Ambiente::find($id);
+        $this->ambiente_id = $ambiente->id;
         $this->nome = $ambiente->nome;
         $this->descricao = $ambiente->descricao;
-         $this->status = $ambiente->status;
-        
-
+        $this->status = $ambiente->status;
     }
-    public function update(){
-    
-      $ambiente = Ambiente::find($this->ambienteId);
+    public function update()
+    {
 
-          $ambiente->nome = $this->nome;
-            $ambiente->ambiente = $this->ambiente;
-             $ambiente->status = $this->nome;
+        $ambiente = Ambiente::find($this->ambiente_id);
 
-               $ambiente->save();
+        $ambiente->nome = $this->nome;
+        $ambiente->descricao = $this->descricao;
+        $ambiente->status = $this->nome;
 
-                session()->flash('success', 'Atualizado');
+        $ambiente->save();
+
+        session()->flash('success', 'Atualizado');
         return redirect()->route('ambientes');
     }
 

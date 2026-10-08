@@ -1,12 +1,12 @@
 <div>
   
-    <form class="shadow-lg card p-5  container mt-5 " style="max-width: 45rem;" wire:submit="store">
+    <form class="shadow-lg card p-5 border border-3 container mt-5 " style="max-width: 45rem;" wire:submit="store">
        <a class=" text-dark btn-lg  text-decoration-none " href={{Route ('ambientes')}}><i class="bi bi-box-arrow-in-left"></i>  </a>
         <h2 class=" m-3 p-3 rol-12 text-center">Novo Ambiente</h2>
         
     <div class="rol-12">
         <p> Nome </p>     
-    <input class=" mb-4 col-4 border-secondary shadow-sm rounded-3  " type="text" wire:model="nome">
+    <input class=" mb-4 col-4 border-secondary  shadow-sm rounded-3  " type="text" wire:model="nome">
     
     <p> Descrição </p>
      <input class="col-12 mb-4 shadow-sm rounded-3 " type="text" wire:model="descricao">
