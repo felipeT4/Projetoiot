@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigInteger('ambiente_id')->unsigned()->nullable(false);
             $table->string('codigo')->unique();
             $table->string('tipo')->nullable(false);
-            $table->text('descricao');
+            $table->string('descricao');
             $table->boolean('status')->default(true);
             $table->foreign('ambiente_id')->references('id')->on('ambientes');
             $table->timestamps();

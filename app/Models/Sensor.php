@@ -12,7 +12,7 @@ class Sensor extends Model
         'ambiente_id',
         'codigo',// TEMPO2, LED01... 
         'tipo',// led, temperatura...
-        'dscricao',
+        'descricao',
         'status'// ativo ou inativo
     ];
 
